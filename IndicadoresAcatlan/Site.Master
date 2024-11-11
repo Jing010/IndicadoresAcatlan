@@ -1,0 +1,50 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="IndicadoresAcatlan.SiteMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sistema de Seguimiento Programático</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .header {
+            background-color: #1B396A;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 50px;
+        }
+        .footer {
+            background-color: #1B396A;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <img src="~/Images/logo-unam.png" class="logo" runat="server" alt="UNAM" />
+            <img src="~/Images/logo-fes.png" class="logo" runat="server" alt="FES Acatlán" />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            Hecho en México. Todos los derechos reservados 2024.
+            <br />
+            Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica.
+            De otra forma, requiere permiso previo por escrito de la Institución.
+        </div>
+    </form>
+</body>
+</html>
