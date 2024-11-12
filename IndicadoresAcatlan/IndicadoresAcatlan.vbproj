@@ -140,7 +140,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Formulario web1.aspx" />
+    <Content Include="Calendario.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -151,8 +151,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
+    <Content Include="Logo\logo-fes.png" />
+    <Content Include="Logo\logo-unam.png" />
     <Content Include="Logo\logo.webp" />
-    <Content Include="Indicadores.aspx" />
+    <Content Include="Indicadores\Indicadores.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -210,11 +212,11 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formulario web1.aspx.designer.vb">
-      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    <Compile Include="Calendario.aspx.designer.vb">
+      <DependentUpon>Calendario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formulario web1.aspx.vb">
-      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    <Compile Include="Calendario.aspx.vb">
+      <DependentUpon>Calendario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
@@ -267,10 +269,10 @@
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Indicadores.aspx.designer.vb">
+    <Compile Include="Indicadores\Indicadores.aspx.designer.vb">
       <DependentUpon>Indicadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Indicadores.aspx.vb">
+    <Compile Include="Indicadores\Indicadores.aspx.vb">
       <DependentUpon>Indicadores.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
