@@ -48,7 +48,7 @@
         <h3 class="login-title gold-text">Seguimiento Programático de la FES ACATLÁN</h3>
         
         <div class="form-group">
-            <asp:Label ID="lblUsuario" runat="server" Text="Usuari" AssociatedControlID="txtUsuario" />
+            <asp:Label ID="lblUsuario" runat="server" Text="Usuario" AssociatedControlID="txtUsuario" />
             <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" />
         </div>
         
