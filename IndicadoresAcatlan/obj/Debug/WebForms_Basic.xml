@@ -37,36 +37,36 @@ IndicadoresAcatlan
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:IndicadoresAcatlan._Default._btn1">
+<member name="F:IndicadoresAcatlan._Default._btnPrograms">
 <summary>
-Control btn1.
+Control btnPrograms.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:IndicadoresAcatlan._Default._btn2">
+<member name="F:IndicadoresAcatlan._Default._btnCalendario">
 <summary>
-Control btn2.
+Control btnCalendario.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:IndicadoresAcatlan._Default._btn3">
+<member name="F:IndicadoresAcatlan._Default._btnProyeccion">
 <summary>
-Control btn3.
+Control btnProyeccion.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:IndicadoresAcatlan._Default._btn4">
+<member name="F:IndicadoresAcatlan._Default._btnReporte">
 <summary>
-Control btn4.
+Control btnReporte.
 </summary>
 <remarks>
 Campo generado automáticamente.
