@@ -29,7 +29,7 @@
             Dim usuario As String = txtUsuario.Text.Trim()
             Dim password As String = txtPassword.Text.Trim()
 
-            ' Verifica que si sea el usuario y Obtiene el tipo de usuario que es para redirigirlo a la pagina correspondiente
+            ' Verifica que si sea el usuario y Obtiene el tipo de usuario que es para redirigirlo a la pagina correspondiente Se cambiara en cuanto se haga la canoexion a base
             Dim usuarioInfo As UsuarioInfo = ValidarUsuarioYContrasena(usuario, password)
 
             If usuarioInfo IsNot Nothing Then

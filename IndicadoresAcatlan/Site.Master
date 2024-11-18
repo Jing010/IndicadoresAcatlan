@@ -32,8 +32,8 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <img src="~/Logo/logo-unam.png" class="logo" runat="server" alt="UNAM" />
-            <img src="~/Logo/logo-fes.png" class="logo" runat="server" alt="FES Acatlán" />
+            <img src="~/Images/Logo/logo-unam.png" class="logo" runat="server" alt="UNAM" />
+            <img src="~/Images/Logo/logo-fes.png" class="logo" runat="server" alt="FES Acatlán" />
         </div>
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
