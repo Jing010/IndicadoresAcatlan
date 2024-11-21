@@ -1,27 +1,70 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
-Imports System.Configuration
-Imports System.IO
+﻿'Imports System.Data
+'Imports System.Data.SqlClient
+'Imports System.Configuration
+'Imports System.IO
 
+'Public Class DBconexion
+'    Private conexion As SqlConnection
+'    Private direccion As ConnectionStringSettings
 
-Public Class DBconexion
+'    ' Constructor: Inicializa la conexión usando la cadena de conexión del Web.config
+'    Public Sub New()
+'        Try
+'            direccion = ConfigurationManager.ConnectionStrings("PIFAConnection")
+'            If direccion Is Nothing Then
+'                Throw New ConfigurationErrorsException("No se encontró la cadena de conexión 'PIFAConnection' en el Web.config")
+'            End If
+'            conexion = New SqlConnection(direccion.ConnectionString)
+'        Catch ex As Exception
+'            Throw New Exception("Error al inicializar la conexión a la base de datos: " & ex.Message)
+'        End Try
+'    End Sub
 
-    Dim conexion As New SqlConnection()
-    Dim direccion As ConnectionStringSettings
-    Dim comando As SqlCommand
-    Sub conectar()
+'    ' Abre la conexión solo si está cerrada para evitar errores
+'    Public Sub AbrirConexion()
+'        If conexion.State = ConnectionState.Closed Then
+'            conexion.Open()
+'        End If
+'    End Sub
 
-        'obtener nombre de la conexion desde el app config
-        direccion = ConfigurationManager.ConnectionStrings("nombre de la conexion")
-        conexion.ConnectionString = direccion.ConnectionString
-        conexion.Open()
-        MsgBox("CONEXION EXITOSA")
-    End Sub
+'    ' Cierra la conexión si está abierta para liberar recursos
+'    Public Sub CerrarConexion()
+'        If conexion.State = ConnectionState.Open Then
+'            conexion.Close()
+'        End If
+'    End Sub
 
-End Class
+'    ' Ejecuta comandos INSERT, UPDATE o DELETE y retorna el número de filas afectadas
+'    ' query: consulta SQL parametrizada
+'    ' parametros: array de parámetros SQL para prevenir inyección SQL
+'    Public Function EjecutarComando(query As String, parametros As SqlParameter()) As Integer
+'        Try
+'            Using cmd As New SqlCommand(query, conexion)
+'                cmd.Parameters.AddRange(parametros)
+'                AbrirConexion()
+'                Return cmd.ExecuteNonQuery()
+'            End Using
+'        Finally
+'            CerrarConexion()
+'        End Try
+'    End Function
 
-'Public Class desconectar(Of)
-'    Dim conexion As New SqlConnection()
-'    conexion.Close()
-
+'    ' Ejecuta consultas SELECT y retorna un DataTable con los resultados
+'    ' query: consulta SQL parametrizada
+'    ' parametros: array de parámetros SQL para prevenir inyección SQL
+'    Public Function EjecutarConsulta(query As String, parametros As SqlParameter()) As DataTable
+'        Dim dt As New DataTable()
+'        Try
+'            Using cmd As New SqlCommand(query, conexion)
+'                cmd.Parameters.AddRange(parametros)
+'                Using da As New SqlDataAdapter(cmd)
+'                    AbrirConexion()
+'                    da.Fill(dt)
+'                End Using
+'            End Using
+'        Finally
+'            CerrarConexion()
+'        End Try
+'        Return dt
+'    End Function
 'End Class

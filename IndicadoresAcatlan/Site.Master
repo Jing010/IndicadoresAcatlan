@@ -21,7 +21,6 @@
             background-color: #1B396A;
             color: white;
             padding: 10px;
-            position: fixed;
             bottom: 0;
             width: 100%;
             font-size: 12px;

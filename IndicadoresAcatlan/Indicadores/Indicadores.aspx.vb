@@ -1,4 +1,4 @@
-﻿'﻿Imports System.Data
+﻿'Imports System.Data
 'Imports System.Data.SqlClient
 'Imports System.Configuration
 'Imports System.IO
@@ -6,7 +6,17 @@ Public Class Indicadores
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            ConfigurarBotones()
+        End If
+    End Sub
 
+    Private Sub ConfigurarBotones()
+        Dim permisos As List(Of String) = DirectCast(Session("Permisos"), List(Of String))
+        
+        btnGuardar.Visible = permisos.Contains("Guardar")
+        btnValidar.Visible = permisos.Contains("Validar")
+        btnModificar.Visible = permisos.Contains("Modificar")
     End Sub
 
     Protected Sub Semaforo(sender As Object, e As EventArgs) Handles btnSemaforo.Click

@@ -60,11 +60,17 @@
     End Sub
 
     Private Function ValidarUsuarioYContrasena(ByVal usuario As String, ByVal password As String) As UsuarioInfo
-        ' En cuanto se haga la conexión con base se modificara esta parte segun corresponda
+        ' Agregamos los permisos específicos para cada usuario
         Dim usuarios As New List(Of UsuarioInfo) From {
-            New UsuarioInfo("ADMIN", "123", TipoUsuario.Administrador),
-            New UsuarioInfo("CAPT", "123", TipoUsuario.Captura),
-            New UsuarioInfo("USER", "123", TipoUsuario.Validador)
+            New UsuarioInfo("ADMIN", "123", TipoUsuario.Administrador) With {
+                .Permisos = New List(Of String) From {"Guardar", "Validar", "Modificar"}
+            },
+            New UsuarioInfo("CAPT", "123", TipoUsuario.Captura) With {
+                .Permisos = New List(Of String) From {"Guardar", "Modificar"}
+            },
+            New UsuarioInfo("USER", "123", TipoUsuario.Validador) With {
+                .Permisos = New List(Of String) From {"Validar"}
+            }
         }
 
         Return usuarios.Find(Function(u) u.Usuario.Equals(usuario, StringComparison.OrdinalIgnoreCase) AndAlso
