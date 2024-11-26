@@ -77,7 +77,7 @@
             <div class="button-container">
                 <button class="button">Plantilla</button>
                 <button class="button">FT</button>
-                <asp:Button ID="btnSemaforo" runat="server" CssClass="button" />
+                <asp:Button ID="btnSemaforo" runat="server" Text="Semaforo" CssClass="button" />
             </div>
         </div>
         <!-- Tabla de Indicadores -->

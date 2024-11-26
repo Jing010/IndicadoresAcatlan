@@ -8,7 +8,7 @@
                 <asp:Button ID="btnPrograms" runat="server" Text="Programas" CssClass="menu-button" />
             </div>
             <div class="menu-item">
-                <asp:Button ID="btnCalendario" runat="server" Text="Configura Calendario Captura" CssClass="menu-button" />
+                <asp:Button ID="btnCalendario" runat="server" Text="Configura Calendario Captura" CssClass="menu-button" OneClick="btnCalendario_Click"/>
             </div>
             <div class="menu-item">
                 <asp:Button ID="btn3" runat="server" Text="Carga de Proyección" CssClass="menu-button" />

@@ -8,7 +8,7 @@
     End Sub
 
     Protected Sub btnCalendario(sender As Object, e As EventArgs) Handles btnCalendario.Click
-        Response.Redirect("~/Calendario/Calendario.aspx", False)
+        Response.Redirect("~/Calendario/Calendario.aspx")
     End Sub
 
 End Class

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Calendario.aspx.vb" Inherits="IndicadoresAcatlan.Calendario" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeFile="Calendario.aspx.vb" Inherits="IndicadoresAcatlan.Calendario" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -12,7 +12,7 @@
         }
         .calendar-title {
             text-align: center;
-            font-family: "Oswald", sans-serif;
+            font-family: Arial, sans-serif;
             font-size: 24px;
             font-weight: bold;
             color: #1B396A;
@@ -30,7 +30,7 @@
             border-radius: 5px;
         }
         .calendar-table th {
-            background-color:#1B396A ;/*#1B396A*/
+            background-color:#1B396A;
             color: lightgray;
             font-weight: bold;
         }
@@ -70,7 +70,6 @@
             font-size: 12px;
             color: #666;
         }
-
     </style>
     <script>
         function propagateYear(input) {
@@ -89,58 +88,64 @@
     <div class="calendar-container">
         <h2 class="calendar-title">Calendario de Indicadores</h2>
         <table class="calendar-table">
-    <thead>
-        <tr>
-            <th rowspan="2">Año</th>
-            <th colspan="2">Indicadores Grises</th>
-            <th colspan="2">Indicadores Blancos</th>
-        </tr>
-        <tr>
-            <th>Fecha Inicio</th>
-            <th>Fecha Término</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Término</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Primera fila con el input del año -->
-        <tr>
-            <td class="year-column">
-                <input type="number" id="year1" placeholder="Ej. 2024" onchange="propagateYear(this)" />
-            </td>
-            <td class="input-cell"><input type="date" id="1erGrisInicio"></td>
-            <td class="input-cell"><input type="date" id="1erGrisTermino"></td>
-            <td class="input-cell"><input type="date" id="1erBlancoInicio"></td>
-            <td class="input-cell"><input type="date" id="1erBlancoTermino"></td>
-        </tr>
-        <!-- Filas subsecuentes con el año como texto -->
-        <tr>
-            <td class="year-column year-display"></td>
-            <td class="input-cell"><input type="date" id="2doGrisInicio"></td>
-            <td class="input-cell"><input type="date" id="2doGrisTermino"></td>
-            <td class="input-cell"><input type="date" id="2doBlancoInicio"></td>
-            <td class="input-cell"><input type="date" id="2doBlancoTermino"></td>
-        </tr>
-        <tr>
-            <td class="year-column year-display"></td>
-            <td class="input-cell"><input type="date" id="3roGrisInicio"></td>
-            <td class="input-cell"><input type="date" id="3roGrisTermino"></td>
-            <td class="input-cell"><input type="date" id="3roBlancoInicio"></td>
-            <td class="input-cell"><input type="date" id="3roBlancoTermino"></td>
-        </tr>
-        <tr>
-            <td class="year-column year-display"></td>
-            <td class="input-cell"><input type="date" id="4toGrisInicio"></td>
-            <td class="input-cell"><input type="date" id="4toGrisTermino"></td>
-            <td class="input-cell"><input type="date" id="4toBlancoInicio"></td>
-            <td class="input-cell"><input type="date" id="4toBlancoTermino"></td>
-        </tr>
-    </tbody>
-</table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Año</th>
+                    <th colspan="2">Indicadores Grises</th>
+                    <th colspan="2">Indicadores Blancos</th>
+                </tr>
+                <tr>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Término</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Término</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="year-column">
+                        <asp:TextBox ID="txtYear" runat="server" TextMode="Number" placeholder="Ej. 2024" 
+                                   CssClass="year-input" AutoPostBack="true" 
+                                   OnTextChanged="txtYear_TextChanged" />
+                    </td>
+                    <td class="input-cell"><asp:TextBox ID="txt1erGrisInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt1erGrisTermino" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt1erBlancoInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt1erBlancoTermino" runat="server" TextMode="Date" /></td>
+                </tr>
+                <tr>
+                    <td class="year-column">
+                        <asp:TextBox ID="txtYear2" runat="server" TextMode="Number" CssClass="year-input" Enabled="false" />
+                    </td>
+                    <td class="input-cell"><asp:TextBox ID="txt2doGrisInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt2doGrisTermino" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt2doBlancoInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt2doBlancoTermino" runat="server" TextMode="Date" /></td>
+                </tr>
+                <tr>
+                    <td class="year-column">
+                        <asp:TextBox ID="txtYear3" runat="server" TextMode="Number" CssClass="year-input" Enabled="false" />
+                    </td>
+                    <td class="input-cell"><asp:TextBox ID="txt3erGrisInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt3erGrisTermino" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt3erBlancoInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt3erBlancoTermino" runat="server" TextMode="Date" /></td>
+                </tr>
+                <tr>
+                    <td class="year-column">
+                        <asp:TextBox ID="txtYear4" runat="server" TextMode="Number" CssClass="year-input" Enabled="false" />
+                    </td>
+                    <td class="input-cell"><asp:TextBox ID="txt4toGrisInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt4toGrisTermino" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt4toBlancoInicio" runat="server" TextMode="Date" /></td>
+                    <td class="input-cell"><asp:TextBox ID="txt4toBlancoTermino" runat="server" TextMode="Date" /></td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="calendar-buttons">
-            <button class="btn-save">Guardar</button>
-            <button class="btn-edit">Editar</button>
+            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn-save" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="btn-edit" OnClick="btnEditar_Click" />
         </div>
-
+    </div>
 </asp:Content>

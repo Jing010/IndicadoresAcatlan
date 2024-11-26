@@ -43,16 +43,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
-        function CaracteresValidos(e) {
-            var key = e.which || e.keyCode;
-            var tecla = String.fromCharCode(key);
-            var patron = /[0-9A-Z]/;
-            if (key < 32) return true;
-            
-            return patron.test(tecla);
-        }
-    </script>
     <div class="login-container">
         <h2 class="login-title">Bienvenido al sistema de</h2>
         <h3 class="login-title gold-text">Seguimiento Programático de la FES ACATLÁN</h3>
